@@ -30,8 +30,8 @@ public class GameManager : MonoBehaviour
             plr = GameObject.FindFirstObjectByType<PlayerMovement>();
             rb = plr.GetComponent<Rigidbody>();
             TimeText = GameObject.Find("PlrUI").transform.Find("Time").GetComponent<TMP_Text>();
-            velocityText = GameObject.Find("PlrUI").transform.Find("Velocity").GetComponent<TMP_Text>();
-            statoText = GameObject.Find("PlrUI").transform.Find("Stato").GetComponent<TMP_Text>();
+            //velocityText = GameObject.Find("PlrUI").transform.Find("Velocity").GetComponent<TMP_Text>();
+            //statoText = GameObject.Find("PlrUI").transform.Find("Stato").GetComponent<TMP_Text>();
             Plrname = PlayerPrefs.GetString("PlrName", "Atos");
         }
         
@@ -49,8 +49,8 @@ public class GameManager : MonoBehaviour
             //Debug.Log(timer);
         }
         DisplayTime();
-        DisplayVelocity();
-        DisplayStato();
+        //DisplayVelocity();
+        //DisplayStato();
     }
     public void StartTimer()
     {

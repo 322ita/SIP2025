@@ -202,11 +202,15 @@ GameObject:
   - component: {fileID: 5290178087272496407}
   - component: {fileID: 6741747487549411620}
   - component: {fileID: 8814868530089240673}
+  - component: {fileID: 1511225856815177600}
+  - component: {fileID: 3454811420333343368}
   - component: {fileID: 4619039381026685684}
+  - component: {fileID: 6164980546725344872}
   - component: {fileID: 3740458049829890927}
   - component: {fileID: 1366538478089942942}
   - component: {fileID: 1972324200990776702}
   - component: {fileID: 1223099631156482020}
+  - component: {fileID: 8210829295204618535}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -290,7 +294,183 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1511225856815177600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043367194545597535}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4caca29ef50fc144ab422498f1a73e31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  braccia:
+    singolo: 0
+    idleSX: {fileID: 32900000, guid: f3eba19b150d91140875364bb655a835, type: 3}
+    posIdleSX: {x: -200, y: -146.9, z: 0}
+    idleDX: {fileID: 32900000, guid: 25874423e4bdc48489a4e2be7536ae22, type: 3}
+    posIdleDX: {x: -100, y: -146.9, z: 0}
+    idle: {fileID: 0}
+    posIdle: {x: 0, y: 0, z: 0}
+    runSX: {fileID: 32900000, guid: 0df984fdba992d24fb7a7ac718feaef9, type: 3}
+    posRunSX: {x: -269.63, y: -146.9, z: 0}
+    runDX: {fileID: 32900000, guid: e60bf070ba7b30246b403a680c3fab2f, type: 3}
+    posRunDX: {x: 269.63, y: -146.9, z: 0}
+    run: {fileID: 0}
+    posRun: {x: 0, y: 0, z: 0}
+    attackSX: {fileID: 32900000, guid: 611336ec770aaad4d8b61abe175d5efc, type: 3}
+    posAttackSX: {x: -269.63, y: -146.9, z: 0}
+    attackDX: {fileID: 32900000, guid: 325529f5299f9cd45b92decb7c8bdaae, type: 3}
+    posAttackDX: {x: 269.63, y: -146.9, z: 0}
+    attackSingolo: {fileID: 0}
+    posAttackSingolo: {x: 0, y: 0, z: 0}
+    carica: {fileID: 32900000, guid: c5832fe52ab7d934288eface2191f859, type: 3}
+    posCarica: {x: 0, y: 0, z: 0}
+    attackCaricato: {fileID: 32900000, guid: 6f0a8318d1b294c479d217f564d9c4fe, type: 3}
+    posAttackCaricato: {x: 0, y: 0, z: 0}
+  vpSX: {fileID: 0}
+  vpDX: {fileID: 0}
+  ri: {fileID: 0}
+  riSX: {fileID: 0}
+  riDX: {fileID: 0}
+  rb: {fileID: 0}
+--- !u!114 &3454811420333343368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043367194545597535}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b86e85def22d5a4ab0c60f904c92d2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  braccia:
+    singolo: 0
+    idleSX: {fileID: 0}
+    posIdleSX: {x: 0, y: 0, z: 0}
+    idleDX: {fileID: 32900000, guid: 122664f89355d534aaa1c5a0075c8dd9, type: 3}
+    posIdleDX: {x: 276, y: -146.9, z: 0}
+    idle: {fileID: 0}
+    posIdle: {x: 0, y: 0, z: 0}
+    runSX: {fileID: 32900000, guid: fa4bfc66f358e9545a5c817c950e5a22, type: 3}
+    posRunSX: {x: -250, y: -146.9, z: 0}
+    runDX: {fileID: 32900000, guid: 17b0cfa1fb212fd49ab374895243d249, type: 3}
+    posRunDX: {x: -50, y: -146.9, z: 0}
+    run: {fileID: 0}
+    posRun: {x: 0, y: 0, z: 0}
+    attackSX: {fileID: 0}
+    posAttackSX: {x: 0, y: 0, z: 0}
+    attackDX: {fileID: 32900000, guid: 4ee9009a49e4a5a408128e4b97628f0a, type: 3}
+    posAttackDX: {x: 276, y: -146.9, z: 0}
+    attackSingolo: {fileID: 0}
+    posAttackSingolo: {x: 0, y: 0, z: 0}
+    carica: {fileID: 32900000, guid: a8b2992532b3eb1499c963abc66180c0, type: 3}
+    posCarica: {x: 276, y: -146.9, z: 0}
+    attackCaricato: {fileID: 32900000, guid: 26181c1f98432ad4fb9cdd2b49eae965, type: 3}
+    posAttackCaricato: {x: 276, y: -146.9, z: 0}
+  vpSX: {fileID: 0}
+  vpDX: {fileID: 0}
+  ri: {fileID: 0}
+  riSX: {fileID: 0}
+  riDX: {fileID: 0}
+  rb: {fileID: 0}
 --- !u!114 &4619039381026685684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043367194545597535}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b6bc2a293a0d274298d5f798dcba99c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bracciaIndex: 1
+  braccie:
+  - singolo: 0
+    idleSX: {fileID: 32900000, guid: f3eba19b150d91140875364bb655a835, type: 3}
+    posIdleSX: {x: -200, y: -146.9, z: 0}
+    idleDX: {fileID: 32900000, guid: 25874423e4bdc48489a4e2be7536ae22, type: 3}
+    posIdleDX: {x: -100, y: -146.9, z: 0}
+    idle: {fileID: 32900000, guid: 79bcb74f21f46144e95c07ab82238d99, type: 3}
+    posIdle: {x: 0, y: -146.9, z: 0}
+    runSX: {fileID: 32900000, guid: 0df984fdba992d24fb7a7ac718feaef9, type: 3}
+    posRunSX: {x: -269.63, y: -146.9, z: 0}
+    runDX: {fileID: 32900000, guid: e60bf070ba7b30246b403a680c3fab2f, type: 3}
+    posRunDX: {x: 269.63, y: -146.9, z: 0}
+    run: {fileID: 32900000, guid: eedadabe009575347be749b8280eea86, type: 3}
+    posRun: {x: 0, y: -216.8, z: 0}
+    attackSX: {fileID: 32900000, guid: 611336ec770aaad4d8b61abe175d5efc, type: 3}
+    posAttackSX: {x: -269.63, y: -146.9, z: 0}
+    attackDX: {fileID: 32900000, guid: 325529f5299f9cd45b92decb7c8bdaae, type: 3}
+    posAttackDX: {x: 269.63, y: -146.9, z: 0}
+    attackSingolo: {fileID: 0}
+    posAttackSingolo: {x: 0, y: -146.9, z: 0}
+    carica: {fileID: 0}
+    posCarica: {x: 0, y: -146.9, z: 0}
+    attackCaricato: {fileID: 0}
+    posAttackCaricato: {x: 0, y: -146.9, z: 0}
+  - singolo: 0
+    idleSX: {fileID: 32900000, guid: 325529f5299f9cd45b92decb7c8bdaae, type: 3}
+    posIdleSX: {x: -1000, y: -1000, z: 0}
+    idleDX: {fileID: 32900000, guid: 122664f89355d534aaa1c5a0075c8dd9, type: 3}
+    posIdleDX: {x: 276, y: -146.9, z: 0}
+    idle: {fileID: 0}
+    posIdle: {x: 276, y: -146.9, z: 0}
+    runSX: {fileID: 32900000, guid: fa4bfc66f358e9545a5c817c950e5a22, type: 3}
+    posRunSX: {x: -250, y: -146.9, z: 0}
+    runDX: {fileID: 32900000, guid: 17b0cfa1fb212fd49ab374895243d249, type: 3}
+    posRunDX: {x: -50, y: -146.9, z: 0}
+    run: {fileID: 32900000, guid: 9a1b4b48f1e23c648a84db275e28627f, type: 3}
+    posRun: {x: 0, y: -146.9, z: 0}
+    attackSX: {fileID: 32900000, guid: 17b0cfa1fb212fd49ab374895243d249, type: 3}
+    posAttackSX: {x: -1000, y: -1000, z: 0}
+    attackDX: {fileID: 32900000, guid: 4ee9009a49e4a5a408128e4b97628f0a, type: 3}
+    posAttackDX: {x: 276, y: -146.9, z: 0}
+    attackSingolo: {fileID: 0}
+    posAttackSingolo: {x: 0, y: 0, z: 0}
+    carica: {fileID: 32900000, guid: a8b2992532b3eb1499c963abc66180c0, type: 3}
+    posCarica: {x: 276, y: -146.9, z: 0}
+    attackCaricato: {fileID: 32900000, guid: 26181c1f98432ad4fb9cdd2b49eae965, type: 3}
+    posAttackCaricato: {x: 276, y: -146.9, z: 0}
+  - singolo: 0
+    idleSX: {fileID: 0}
+    posIdleSX: {x: 0, y: 0, z: 0}
+    idleDX: {fileID: 0}
+    posIdleDX: {x: 0, y: 0, z: 0}
+    idle: {fileID: 32900000, guid: e6e11154c6061cd4b8fa0c914836a223, type: 3}
+    posIdle: {x: 260, y: -146.9, z: 0}
+    runSX: {fileID: 0}
+    posRunSX: {x: 0, y: 0, z: 0}
+    runDX: {fileID: 0}
+    posRunDX: {x: 0, y: 0, z: 0}
+    run: {fileID: 32900000, guid: 0e385b563bc442d4c8d98fd6dc5ace8e, type: 3}
+    posRun: {x: 0, y: -146.9, z: 0}
+    attackSX: {fileID: 0}
+    posAttackSX: {x: 0, y: 0, z: 0}
+    attackDX: {fileID: 0}
+    posAttackDX: {x: 0, y: 0, z: 0}
+    attackSingolo: {fileID: 0}
+    posAttackSingolo: {x: 0, y: 0, z: 0}
+    carica: {fileID: 0}
+    posCarica: {x: 0, y: 0, z: 0}
+    attackCaricato: {fileID: 0}
+    posAttackCaricato: {x: 0, y: 0, z: 0}
+  re: {fileID: 8400000, guid: 4a6eefbfe76df58468c6795ecb98de7e, type: 2}
+  vpSX: {fileID: 0}
+  vpDX: {fileID: 0}
+  vp: {fileID: 0}
+  ri: {fileID: 0}
+  riSX: {fileID: 0}
+  riDX: {fileID: 0}
+  playerMovement: {fileID: 3740458049829890927}
+  rb: {fileID: 1366538478089942942}
+--- !u!114 &6164980546725344872
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -299,38 +479,39 @@ MonoBehaviour:
   m_GameObject: {fileID: 2043367194545597535}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b6bc2a293a0d274298d5f798dcba99c, type: 3}
+  m_Script: {fileID: 11500000, guid: 042621b7c025cf943abcbdae1102b96f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bracciaIndex: 1
-  braccie:
-  - idle: {fileID: 32900000, guid: 79bcb74f21f46144e95c07ab82238d99, type: 3}
-    posIdle: {x: 0, y: -146.9, z: 0}
-    run: {fileID: 32900000, guid: eedadabe009575347be749b8280eea86, type: 3}
-    posRun: {x: 0, y: -216.8, z: 0}
-    attack:
-    - {fileID: 32900000, guid: 8ed83bfd5c00d7f47be67b0b874da94c, type: 3}
-    - {fileID: 32900000, guid: 125fcd201cd9ec041a7cd36f7d895175, type: 3}
-    posAttack: {x: 0, y: -146.9, z: 0}
-  - idle: {fileID: 32900000, guid: 122664f89355d534aaa1c5a0075c8dd9, type: 3}
-    posIdle: {x: 276, y: -146.9, z: 0}
-    run: {fileID: 32900000, guid: 9a1b4b48f1e23c648a84db275e28627f, type: 3}
-    posRun: {x: 0, y: -146.9, z: 0}
-    attack:
-    - {fileID: 32900000, guid: 71644ec4bf7205846935fb9cd69d1aac, type: 3}
-    posAttack: {x: 276, y: -146.9, z: 0}
-  - idle: {fileID: 32900000, guid: e6e11154c6061cd4b8fa0c914836a223, type: 3}
-    posIdle: {x: 260, y: -146.9, z: 0}
-    run: {fileID: 32900000, guid: 0e385b563bc442d4c8d98fd6dc5ace8e, type: 3}
-    posRun: {x: 0, y: -146.9, z: 0}
-    attack:
-    - {fileID: 32900000, guid: 6d042dd6209d65b49a79bf8a3cbe6a5d, type: 3}
-    posAttack: {x: 260, y: -146.9, z: 0}
-  re: {fileID: 8400000, guid: 4a6eefbfe76df58468c6795ecb98de7e, type: 2}
-  vp: {fileID: 0}
+  braccia:
+    singolo: 0
+    idleSX: {fileID: 0}
+    posIdleSX: {x: 0, y: 0, z: 0}
+    idleDX: {fileID: 32900000, guid: e6e11154c6061cd4b8fa0c914836a223, type: 3}
+    posIdleDX: {x: 219.88, y: -146.9, z: 0}
+    idle: {fileID: 0}
+    posIdle: {x: 0, y: 0, z: 0}
+    runSX: {fileID: 32900000, guid: 77bb85aff7a8dcd46a146b807b3fcc81, type: 3}
+    posRunSX: {x: -175, y: -146.9, z: 0}
+    runDX: {fileID: 32900000, guid: 6cd91c6011e71e44b86dec49e1a0e7ad, type: 3}
+    posRunDX: {x: 120.26, y: -146.9, z: 0}
+    run: {fileID: 0}
+    posRun: {x: 0, y: 0, z: 0}
+    attackSX: {fileID: 0}
+    posAttackSX: {x: 0, y: 0, z: 0}
+    attackDX: {fileID: 32900000, guid: 6d042dd6209d65b49a79bf8a3cbe6a5d, type: 3}
+    posAttackDX: {x: 219.88, y: -146.9, z: 0}
+    attackSingolo: {fileID: 0}
+    posAttackSingolo: {x: 0, y: 0, z: 0}
+    carica: {fileID: 32900000, guid: 8904e9735d74e4f44babad646fd6bf6a, type: 3}
+    posCarica: {x: 0, y: 0, z: 0}
+    attackCaricato: {fileID: 32900000, guid: 4818c5ac51133484da9093ae16ffcedc, type: 3}
+    posAttackCaricato: {x: 0, y: 0, z: 0}
+  vpSX: {fileID: 0}
+  vpDX: {fileID: 0}
   ri: {fileID: 0}
-  playerMovement: {fileID: 3740458049829890927}
-  rb: {fileID: 1366538478089942942}
+  riSX: {fileID: 0}
+  riDX: {fileID: 0}
+  rb: {fileID: 0}
 --- !u!114 &3740458049829890927
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -460,6 +641,20 @@ MonoBehaviour:
   WalkSD: {fileID: 6289080776795907380}
   SlideSD: {fileID: 5626421611448761079}
   WallRunSD: {fileID: 2990332456871131288}
+--- !u!114 &8210829295204618535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2043367194545597535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 738920e8b96d29348aca0f6be2fcad89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 5
+  currentHealth: 0
 --- !u!1 &3080471093198898308
 GameObject:
   m_ObjectHideFlags: 0

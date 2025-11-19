@@ -226,7 +226,7 @@ public class PlayerMovement : MonoBehaviour
                 rb.AddForce(Orientation.up * jumpForce, ForceMode.Impulse);
                 jumpcount++;
             }
-            jumpWall();
+            //jumpWall();
         }
         
    
