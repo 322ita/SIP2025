@@ -2,19 +2,23 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
 using Atouas;
+using System.Threading;
 
 public class sam : MonoBehaviour
 {
 private  bool attackingSX = false;
     private  bool attackingDX = false;
-    private double timerSX;
-    private double timerDX;
+    private double timer = 0;
+    private double timerDanno = 0;
+    [SerializeField] private float dist = 3f;
     [SerializeField] private Atouas.Braccia braccia;
     [SerializeField] public VideoPlayer vpSX;
     [SerializeField] public VideoPlayer vpDX;
     [SerializeField] public RawImage ri;
     [SerializeField] public RawImage riSX;
     [SerializeField] public RawImage riDX;
+    [SerializeField] public RawImage fuoco;
+
     [SerializeField] private Rigidbody rb;
 
 
@@ -28,6 +32,9 @@ private  bool attackingSX = false;
         riSX = GameObject.Find("BraccioSX").GetComponent<RawImage>();
         riDX = GameObject.Find("BraccioDX").GetComponent<RawImage>();
         ri = GameObject.Find("BracciaSingolo").GetComponent<RawImage>();
+        fuoco = GameObject.Find("Fuoco").GetComponent<RawImage>();
+        fuoco.gameObject.SetActive(false);
+
     }
 
     // Update is called once per frame
@@ -68,11 +75,14 @@ private  bool attackingSX = false;
                 }
             }
         Attack();
+        primoAttackHandler();
     }
 
     void Attack()
     {
-        
+        if(attackingDX) timer+= Time.deltaTime;
+        if(timer >= 5) timer+= Time.deltaTime;
+        if(timer >= 8) timer=0;
                 // if(attackingSX)
                 // {
                 //     timerSX += Time.deltaTime;
@@ -93,16 +103,44 @@ private  bool attackingSX = false;
             //         vpSX.Play();
 
             // }
-            if(Input.GetKeyDown(KeyCode.Mouse0))
+            if(Input.GetKeyDown(KeyCode.Mouse0) && timer <= 5)
             {
                     attackingDX = true;
                     riDX.gameObject.transform.localPosition = braccia.posAttackDX;
                     vpDX.clip = braccia.attackDX;
                     vpDX.Play();
+                    fuoco.gameObject.SetActive(true);
+
+                    
             }
-            else if(Input.GetKeyUp(KeyCode.Mouse0))
+            else if(Input.GetKeyUp(KeyCode.Mouse0) || timer > 5)
             {
                 attackingDX = false;
+                fuoco.gameObject.SetActive(false);
+            }
+            if(timer > 8) timer=0;
+        }
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(transform.position, transform.position + transform.forward * dist);
+    }
+    void primoAttackHandler()
+    {
+        if(!attackingDX) return;
+        timerDanno += Time.deltaTime;
+        RaycastHit hit;
+        if(Physics.Raycast(transform.position, transform.forward, out hit, dist))
+        {
+            if(hit.collider.gameObject.CompareTag("Nemico"))
+            {
+                TestaLimoneAI hs = hit.collider.gameObject.GetComponent<TestaLimoneAI>();
+                if(hs != null && timerDanno >= 1)
+                {
+                    hs.TakeDamage(65);
+                    timerDanno = 0;
+                }
             }
         }
+    }
 }

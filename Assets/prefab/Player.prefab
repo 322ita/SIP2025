@@ -482,6 +482,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 042621b7c025cf943abcbdae1102b96f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dist: 5.15
   braccia:
     singolo: 0
     idleSX: {fileID: 0}

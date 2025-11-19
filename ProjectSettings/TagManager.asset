@@ -8,6 +8,7 @@ TagManager:
   - circuito
   - foddi
   - BracciaUI
+  - Nemico
   layers:
   - Default
   - TransparentFX
