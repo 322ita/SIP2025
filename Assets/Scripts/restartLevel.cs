@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class restartLevel : MonoBehaviour
@@ -21,8 +22,7 @@ public class restartLevel : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.transform.position = manager.checkpoint.position;
-            source.Play();
+            SceneManager.LoadScene(7);
         }
     }
 }

@@ -135,9 +135,10 @@ public class PlayerMovement : MonoBehaviour
 
         if (grounded)
             ClimbTImer = 0;
-
+        #if UNITY_EDITOR
         if (Input.GetKeyDown(KeyCode.Alpha1))
             SceneManager.LoadScene(1);
+        #endif
         
     }
     private void FixedUpdate()
