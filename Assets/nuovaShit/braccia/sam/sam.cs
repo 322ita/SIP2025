@@ -137,7 +137,7 @@ private  bool attackingSX = false;
                 TestaLimoneAI hs = hit.collider.gameObject.GetComponent<TestaLimoneAI>();
                 if(hs != null && timerDanno >= 1)
                 {
-                    hs.TakeDamage(65);
+                    hs.TakeDamage(120);
                     timerDanno = 0;
                 }
             }

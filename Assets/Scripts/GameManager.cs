@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 public class GameManager : MonoBehaviour
 {
@@ -37,7 +38,6 @@ public class GameManager : MonoBehaviour
             Plrname = PlayerPrefs.GetString("PlrName", "Atos");
         }
         
-        
         names = PlayerPrefsExtra.GetList<string>(LevelString + "Name", new List<string>());
         times = PlayerPrefsExtra.GetList<float>(LevelString + "Time", new List<float>());
     }
@@ -45,6 +45,13 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            if(Input.GetKeyDown(KeyCode.Return))
+            {
+                PlayerPrefs.DeleteAll();
+            }
+        }
         if (timerOn)
         {
             timer += Time.deltaTime;

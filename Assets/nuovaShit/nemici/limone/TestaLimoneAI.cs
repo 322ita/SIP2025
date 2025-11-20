@@ -118,7 +118,7 @@ public class TestaLimoneAI : MonoBehaviour
         currentHealth -= damageAmount;
         if (currentHealth <= 0)
         {
-            GameObject.FindAnyObjectByType<GameManager>()?.AddScore(10);
+            GameObject.FindAnyObjectByType<GameManager>()?.AddScore(Random.Range(100, 300));
             Destroy(gameObject);
         }
     }

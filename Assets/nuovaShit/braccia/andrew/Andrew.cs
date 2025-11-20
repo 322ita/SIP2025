@@ -133,7 +133,7 @@ public class Andrew : MonoBehaviour
                 TestaLimoneAI hs = hit.collider.gameObject.GetComponent<TestaLimoneAI>();
                 if(hs != null && timerDanno >= 1)
                 {
-                    hs.TakeDamage(200);
+                    hs.TakeDamage(500);
                     timerDanno = 0;
                 }
             }

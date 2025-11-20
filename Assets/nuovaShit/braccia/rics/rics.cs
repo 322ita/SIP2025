@@ -17,6 +17,7 @@ public class rics : MonoBehaviour
     [SerializeField] public RawImage riSX;
     [SerializeField] public RawImage riDX;
     [SerializeField] private Rigidbody rb;
+    [SerializeField] private RawImage flash;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -29,6 +30,7 @@ public class rics : MonoBehaviour
         riSX = GameObject.Find("BraccioSX").GetComponent<RawImage>();
         riDX = GameObject.Find("BraccioDX").GetComponent<RawImage>();
         ri = GameObject.Find("BracciaSingolo").GetComponent<RawImage>();
+        //flash = GameObject.Find("Flash").GetComponent<RawImage>();
     }
 
     // Update is called once per frame
@@ -112,7 +114,12 @@ public class rics : MonoBehaviour
                     riDX.gameObject.transform.localPosition = braccia.posAttackDX;
                     vpDX.clip = braccia.attackDX;
                     vpDX.Play();
+                    //flash.gameObject.SetActive(true);
                 }
+        if (!attackingDX)
+        {
+            //flash.gameObject.SetActive(false);
+        }
             }
 
 
@@ -129,7 +136,7 @@ public class rics : MonoBehaviour
                 TestaLimoneAI hs = hit.collider.gameObject.GetComponent<TestaLimoneAI>();
                 if(hs != null && timerDanno >= 1)
                 {
-                    hs.TakeDamage(100);
+                    hs.TakeDamage(250);
                     timerDanno = 0;
                 }
             }

@@ -26,10 +26,8 @@ public class HealthUI : MonoBehaviour
             CuorePieno.SetActive(false);
             CuoreRossa.SetActive(true);
         }
-        for(int i = 4; i >= 0; i--)
+        for( int i = 0; i < cuoriPieni.Length; i++)
         {
-            if(i < 0) break;
-            //if(i >= cuoriPieni.Length || i >= cuoriRossi.Length) continue;
             if(i < healthScript.currentHealth)
             {
                 cuoriPieni[i].SetActive(true);
