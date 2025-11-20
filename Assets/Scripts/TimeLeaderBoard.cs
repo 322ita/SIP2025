@@ -47,7 +47,7 @@ public class TimeLeaderBoard : MonoBehaviour
             float minutes = Mathf.FloorToInt(gameManager.times[i] / 60);
             float seconds = Mathf.FloorToInt(gameManager.times[i] % 60);
             float ms = Mathf.FloorToInt((gameManager.times[i] % 1) * 1000);
-            text.SetText(string.Format("{0}\n{1}: {2:00}:{3:00}:{4:000}", text.text, gameManager.names[i], minutes, seconds, ms));
+            text.SetText(string.Format("{0}\n{1}: {2}", text.text, gameManager.names[i], gameManager.times[i]));
         }
     }
     void showGlobal()
@@ -58,7 +58,7 @@ public class TimeLeaderBoard : MonoBehaviour
             float minutes = Mathf.FloorToInt(times[i] / 60);
             float seconds = Mathf.FloorToInt(times[i] % 60);
             float ms = Mathf.FloorToInt((times[i] % 1) * 1000);
-            text.SetText(string.Format("{0}\n{1}: {2:00}:{3:00}:{4:000}", text.text, names[i], minutes, seconds, ms));
+            text.SetText(string.Format("{0}\n{1}: {2}", text.text, names[i], times[i]));
         }
     }
 }

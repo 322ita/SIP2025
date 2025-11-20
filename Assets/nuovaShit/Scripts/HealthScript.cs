@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthScript : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class HealthScript : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
+        GameObject.FindAnyObjectByType<GameManager>().StartTimer();
     }
 
     // Update is called once per frame
@@ -27,5 +29,6 @@ public class HealthScript : MonoBehaviour
     {
         // Add death logic here
         Debug.Log("Player has died.");
+        SceneManager.LoadScene(7);
     }
 }

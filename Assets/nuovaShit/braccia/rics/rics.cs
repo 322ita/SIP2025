@@ -9,6 +9,7 @@ public class rics : MonoBehaviour
     private  bool attackingDX = false;
     private double timerSX;
     private double timerDX;
+    private double timerDanno=0;
     [SerializeField] private Atouas.Braccia braccia;
     [SerializeField] public VideoPlayer vpSX;
     [SerializeField] public VideoPlayer vpDX;
@@ -68,6 +69,7 @@ public class rics : MonoBehaviour
                 }
             }
         Attack();
+        primoAttackHandler();
     }
 
     void Attack()
@@ -112,4 +114,25 @@ public class rics : MonoBehaviour
                     vpDX.Play();
                 }
             }
+
+
+    void primoAttackHandler()
+    {
+        if(!attackingDX && !attackingSX) return;
+        timerDanno += Time.deltaTime;
+        RaycastHit hit;
+        if(Physics.Raycast(transform.position, transform.forward, out hit))
+        {
+            if(hit.collider.gameObject.CompareTag("Nemico"))
+            {
+                Debug.Log("Colpito nemico");
+                TestaLimoneAI hs = hit.collider.gameObject.GetComponent<TestaLimoneAI>();
+                if(hs != null && timerDanno >= 1)
+                {
+                    hs.TakeDamage(100);
+                    timerDanno = 0;
+                }
+            }
+        }
+    }
 }

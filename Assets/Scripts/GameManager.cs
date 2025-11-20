@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 public class GameManager : MonoBehaviour
 {
     PlayerMovement plr;
     Rigidbody rb;
     public bool timerOn=false;
     public float timer=0f;
+    public int punti = 0;
     public TMP_Text TimeText;
     public TMP_Text velocityText;
     public TMP_Text statoText;
@@ -68,9 +70,9 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogWarning("TIMESTOPPED");
             timerOn = false;
+            punti += 100000 / (int)timer;
             CercaGiocatore();
             sort();
-
 
             PlayerPrefsExtra.SetList(LevelString + "Name", names);
             PlayerPrefsExtra.SetList(LevelString + "Time", times);
@@ -116,14 +118,14 @@ public class GameManager : MonoBehaviour
         }
         if (trovato)
         {
-            if (timer < times[i])
-                times[i] = timer;
+            if (punti > times[i])
+                times[i] = punti;
         }
             
         else
         {
             names.Add(Plrname);
-            times.Add(timer);
+            times.Add(punti);
         }
     }
     void sort()
@@ -131,7 +133,7 @@ public class GameManager : MonoBehaviour
         List<(string name2, float times2)> players = new List<(string, float)>();
         for (int i = 0; i < names.Count; i++)
             players.Add((names[i], times[i]));
-        players.Sort((player1, player2) => player1.times2.CompareTo(player2.times2));
+        players.Sort((player1, player2) => player2.times2.CompareTo(player1.times2));
         int maxCount = Mathf.Min(players.Count, 10);
         names.Clear();
         times.Clear();
@@ -145,5 +147,10 @@ public class GameManager : MonoBehaviour
     public void Esci()
     {
         Application.Quit();
+    }
+
+    internal void AddScore(int v)
+    {
+        punti += v;
     }
 }

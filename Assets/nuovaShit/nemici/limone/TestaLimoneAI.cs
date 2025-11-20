@@ -21,6 +21,8 @@ public class TestaLimoneAI : MonoBehaviour
     private float timer = 0f;
     private bool isCharging = false;
     private bool isPreparing = false;
+    [SerializeField] GameObject fermo;
+    [SerializeField] GameObject muovendo;
 
     void Start()
     {
@@ -82,13 +84,16 @@ public class TestaLimoneAI : MonoBehaviour
         agent.speed = runSpeed;
         agent.SetDestination(player.position);
         ////animator.SetBool("IsRunning", true);
+        fermo.SetActive(false);
+        muovendo.SetActive(true);
     }
 
     void Patrol()
     {
         agent.speed = walkSpeed;
         //animator.SetBool("IsRunning", false);
-        
+        fermo.SetActive(true);
+        muovendo.SetActive(false);
     }
 
     void OnCollisionEnter(Collision collision)
@@ -113,6 +118,7 @@ public class TestaLimoneAI : MonoBehaviour
         currentHealth -= damageAmount;
         if (currentHealth <= 0)
         {
+            GameObject.FindAnyObjectByType<GameManager>()?.AddScore(10);
             Destroy(gameObject);
         }
     }

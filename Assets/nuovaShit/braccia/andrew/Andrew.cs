@@ -9,6 +9,8 @@ public class Andrew : MonoBehaviour
     private  bool attackingDX = false;
     private double timerSX;
     private double timerDX;
+    [SerializeField] private float dist = 3f;
+    private double timerDanno=0;
     [SerializeField] private Atouas.Braccia braccia;
     [SerializeField] public VideoPlayer vpSX;
     [SerializeField] public VideoPlayer vpDX;
@@ -68,6 +70,7 @@ public class Andrew : MonoBehaviour
                 }
             }
         Attack();
+        primoAttackHandler();
     }
 
     void Attack()
@@ -112,4 +115,29 @@ public class Andrew : MonoBehaviour
                     vpDX.Play();
                 }
             }
+            void OnDrawGizmos()
+    {
+        Gizmos.color = Color.green;
+        Gizmos.DrawLine(transform.position, transform.position + transform.forward * dist);
+    }
+    void primoAttackHandler()
+    {
+        if(!attackingDX && !attackingSX) return;
+        timerDanno += Time.deltaTime;
+        RaycastHit hit;
+        if(Physics.Raycast(transform.position, transform.forward, out hit, dist))
+        {
+            if(hit.collider.gameObject.CompareTag("Nemico"))
+            {
+                Debug.Log("Colpito nemico");
+                TestaLimoneAI hs = hit.collider.gameObject.GetComponent<TestaLimoneAI>();
+                if(hs != null && timerDanno >= 1)
+                {
+                    hs.TakeDamage(200);
+                    timerDanno = 0;
+                }
+            }
         }
+    }
+        }
+
